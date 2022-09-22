@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { setFilters } from "../../store/slices/locations";
 import CtaFilters from "../Characters/Filters/CtaFilters";
 import { LocationFiltersType } from "../../types/locations";
+import { resetFilters } from "../../store/slices/locations";
 
 const LocationFilters: FC = () => {
   const { filtersState } = useAppSelector((state) => state.locations);
@@ -34,7 +35,7 @@ const LocationFilters: FC = () => {
   const handleResetFilters = () => {
     formRef.current?.reset();
     setFilterValues({});
-    dispatch(setFilters({}));
+    dispatch(resetFilters());
   };
 
   return (

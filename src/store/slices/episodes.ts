@@ -41,11 +41,8 @@ export const episodesSlice = createSlice({
     },
     setFilter: (state: EpisodesState, action: PayloadAction<string>) => {
       state.filterByName = { name: action.payload };
-      state.currentURL = newURL(
-        "episode",
-        state.currentPage,
-        state.filterByName
-      );
+      state.currentPage = 1;
+      state.currentURL = newURL("episode", 1, state.filterByName);
     },
   },
   extraReducers: (builder) => {

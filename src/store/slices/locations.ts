@@ -48,20 +48,12 @@ export const locationsSlice = createSlice({
       action: PayloadAction<LocationFiltersType>
     ) => {
       state.filtersState = action.payload;
-      state.currentURL = newURL(
-        "location",
-        state.currentPage,
-        state.filtersState
-      );
+      state.currentURL = newURL("location", 1, state.filtersState);
     },
     resetFilters: (state: LocationsState) => {
       state.filtersState = {};
       state.currentPage = 1;
-      state.currentURL = newURL(
-        "location",
-        state.currentPage,
-        state.filtersState
-      );
+      state.currentURL = newURL("location", 1, state.filtersState);
     },
   },
   extraReducers: (builder) => {
@@ -84,7 +76,7 @@ export const locationsSlice = createSlice({
   },
 });
 
-export const { setFilters } = locationsSlice.actions;
+export const { setFilters, resetFilters } = locationsSlice.actions;
 type LocationsActionsType = typeof locationsSlice.actions;
 export type UnionLocationsNEpisodesType =
   | LocationsActionsType

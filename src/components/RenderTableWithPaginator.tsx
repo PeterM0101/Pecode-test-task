@@ -33,6 +33,7 @@ const RenderTableWithPaginator: FC<RenderTableWithPaginatorProps> = ({
 
   useEffect(() => {
     dispatch(fetchData(currentURL!));
+    // eslint-disable-next-line
   }, [currentURL]);
 
   const handlePageChange = (page: number) => {

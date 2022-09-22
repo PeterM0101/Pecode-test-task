@@ -54,6 +54,7 @@ const InitCharactersFilters = () => {
       dispatch(setCount(info?.count!));
       dispatch(changeCurrentURL(`${CHARACTERS_URL}/?page=1`));
     }
+    // eslint-disable-next-line
   }, [url]);
   return null;
 };

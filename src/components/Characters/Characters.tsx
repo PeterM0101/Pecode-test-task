@@ -41,7 +41,8 @@ const Characters: FC<CharactersProps> = () => {
 
   useEffect(() => {
     if (currentURL) dispatch(fetchData(currentURL));
-  }, [currentURL, dispatch]);
+    // eslint-disable-next-line
+  }, [currentURL]);
 
   return (
     <Container className="mt-5 d-flex flex-column align-items-center">
